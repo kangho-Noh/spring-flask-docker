@@ -13,19 +13,13 @@ public class DataController {
 
     @PostMapping("/data/save")
     public void addMember(@RequestBody Member member){
+        System.out.println("[POST request Received : /data/save]");
         memberRepository.save(member);
-
-        List<Member> all = memberRepository.findAll();
-        for (Member member1 : all) {
-            System.out.println("member1.getUsername() = " + member1.getUsername());
-            System.out.println("member1.getAge() = " + member1.getAge());
-            System.out.println("member1.getId() = " + member1.getId());
-        }
-
     }
 
     @GetMapping("/members")
     public List<Member> listMembers(){
+        System.out.println("[GET request Received : /members]");
         List<Member> all = memberRepository.findAll();
         return all;
     }

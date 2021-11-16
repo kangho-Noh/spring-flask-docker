@@ -79,6 +79,4 @@ def members():
     res = requests.get(url)
     data = json.loads(res.text)
 
-    for i in data:
-        print(i)
     return render_template("members.html", data=data)
