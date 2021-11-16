@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+  
+<html>
+    <head>
+        <title>Members' List</title>
+    </head>
+    <body>
+    <table>
+    <thead>
+    <th>id</th>
+    <th>username</th>
+    <th>age</th>
+    </thead>
+    
+    <tbody>
+
+    {%for i in data%}
+    
+        <tr>
+        <td>{{i['id']}}</td>
+        <td>{{i['username']}}</td>
+        <td>{{i['age']}}</td>
+        </tr>
+    {%endfor%}
+    
+    </tbody>
+    </table>
+
+    <a href="/">메인으로</a>
+    </body>
+</html>
