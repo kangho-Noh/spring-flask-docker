@@ -1,0 +1,8 @@
+version: "3.7"
+services:
+  spring-server:
+    image: rkdgh98/my-spring-app
+  flask-interface:
+    image: rkdgh98/my-flask-app
+    ports:
+      - "5000:5000"
