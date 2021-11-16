@@ -4,6 +4,7 @@ from flask.templating import render_template
 import requests
 
 app = Flask(__name__)
+dns = "spring-server"
 
 
 @app.route('/')
@@ -30,7 +31,7 @@ def save():
     if(request.method == 'POST'):
         # JSON 형식으로 서버에 전달
         data = request.form
-        url = "http://localhost:8080/data/save"
+        url = f"http://{dns}:8080/data/save"
         headers = {'Content-Type': 'application/json; charset=utf-8'}
         res = requests.post(url,
                             json=data,
@@ -75,7 +76,7 @@ def register_form():
 def members():
     # show member lists
     # data get
-    url = "http://localhost:8080/members"
+    url = f"http://{dns}:8080/members"
     res = requests.get(url)
     data = json.loads(res.text)
 
